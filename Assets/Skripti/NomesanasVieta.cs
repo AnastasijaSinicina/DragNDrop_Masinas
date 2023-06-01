@@ -58,8 +58,25 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
 							break;
 						case "buss":
 							objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[3]);
-							break;
-					}
+							break;                    
+                        case "cements":
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[4]);
+                            break;
+                        case "e46":
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[5]);
+                            break;
+                       
+                        case "e61":
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[6]);
+                            break;
+                        case "b2":
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[7]);
+                            break;
+                        case "eskavator":
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[7]);
+                            break;
+
+                    }
 				}				
 			} else {
                 objektuSkripts.vaiIstajaVieta = false;
@@ -77,6 +94,24 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
                     case "buss":
                         objektuSkripts.autobuss.GetComponent<RectTransform>().localPosition = objektuSkripts.bussKoord;
                         break;
+       
+                    case "cements":
+                        objektuSkripts.cementaMasina.GetComponent<RectTransform>().localPosition = objektuSkripts.cementaKoord;
+                        break;
+                    case "e46":
+                        objektuSkripts.e46.GetComponent<RectTransform>().localPosition = objektuSkripts.e46Koord;
+						break;
+                   
+                    case "e61":
+                        objektuSkripts.e61.GetComponent<RectTransform>().localPosition = objektuSkripts.e61Koord;
+                        break;
+                    case "b2":
+                        objektuSkripts.b2.GetComponent<RectTransform>().localPosition = objektuSkripts.b2Koord;
+                        break;
+                    case "eskavator":
+                        objektuSkripts.eskavators.GetComponent<RectTransform>().localPosition = objektuSkripts.eskKord;
+                        break;
+
                 }
             }
 			
