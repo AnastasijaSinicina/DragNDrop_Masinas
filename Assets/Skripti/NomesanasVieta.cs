@@ -60,21 +60,33 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
 							objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[3]);
 							break;                    
                         case "cements":
-                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[4]);
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[6]);
                             break;
                         case "e46":
-                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[5]);
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[4]);
                             break;
                        
                         case "e61":
-                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[6]);
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[3]);
                             break;
                         case "b2":
-                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[7]);
+                            objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[4]);
                             break;
                         case "eskavator":
                             objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[7]);
                             break;
+					case "policija":
+						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[5]);
+						break;
+					case "traktor":
+						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[8]);
+						break;
+					case "traktor2":
+						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[9]);
+						break;
+					case "uguns":
+						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[10]);
+						break;
 
                     }
 				}				
@@ -111,6 +123,22 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
                     case "eskavator":
                         objektuSkripts.eskavators.GetComponent<RectTransform>().localPosition = objektuSkripts.eskKord;
                         break;
+				case "policija":
+					objektuSkripts.policija.GetComponent<RectTransform>().localPosition = objektuSkripts.policijaKoord;
+					break;
+
+				case "traktor":
+					objektuSkripts.traktors.GetComponent<RectTransform>().localPosition = objektuSkripts.traktorKoord;
+					break;
+
+				case "traktor2":
+					objektuSkripts.traktors2.GetComponent<RectTransform>().localPosition = objektuSkripts.traktor2Koord;
+					break;
+
+				case "uguns":
+					objektuSkripts.ugunsdzesejs.GetComponent<RectTransform>().localPosition = objektuSkripts.ugunsKoord;
+					break;
+
 
                 }
             }
