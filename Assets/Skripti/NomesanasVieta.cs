@@ -64,8 +64,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
                             break;
                         case "e46":
                             objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[4]);
-                            break;
-                       
+                            break;                     
                         case "e61":
                             objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[3]);
                             break;
