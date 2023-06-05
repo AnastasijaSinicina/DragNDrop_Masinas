@@ -15,4 +15,7 @@ public class AinuParsledzejs : MonoBehaviour {
 	public void uzSpele(){
 		SceneManager.LoadScene("Karte", LoadSceneMode.Single);
 	}
+	public void uzSakums(){
+		SceneManager.LoadScene("Sakums", LoadSceneMode.Single);
+	}
 }
