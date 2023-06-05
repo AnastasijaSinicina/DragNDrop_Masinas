@@ -9,6 +9,10 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
 	private float xIzmeruStarp, yIzmeruStarp;
 	public Objekti objektuSkripts;
 
+
+
+	//public int sk=0;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -43,10 +47,10 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
 
 					objektuSkripts.vaiIstajaVieta = true;
 					eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-
 					eventData.pointerDrag.GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation;
-
 					eventData.pointerDrag.GetComponent<RectTransform>().localScale = GetComponent<RectTransform>().localScale;
+					objektuSkripts.masinas++;
+					objektuSkripts.rez ();
 
 					switch (eventData.pointerDrag.tag)
 					{
@@ -75,7 +79,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
                             objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[7]);
                             break;
 					case "policija":
-						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[5]);
+						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[2]);
 						break;
 					case "traktor":
 						objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[8]);
@@ -88,7 +92,8 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
 						break;
 
                     }
-				}				
+				}	
+
 			} else {
                 objektuSkripts.vaiIstajaVieta = false;
                 objektuSkripts.audioAvots.PlayOneShot(objektuSkripts.skanasKoAtskanot[0]);
@@ -141,7 +146,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler{
 
                 }
             }
-			
+
 		}
 
     }

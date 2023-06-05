@@ -15,6 +15,9 @@ public class Objekti : MonoBehaviour {
     public GameObject traktors;
     public GameObject traktors2;
     public GameObject ugunsdzesejs;
+	public int masinas;
+	public GameObject izkartne;
+
 
     [HideInInspector]
 	public Vector2 atkrMKoord;
@@ -63,6 +66,12 @@ public class Objekti : MonoBehaviour {
         traktor2Koord = traktors2.GetComponent<RectTransform>().localPosition;
         ugunsKoord = ugunsdzesejs.GetComponent<RectTransform>().localPosition;
     }
+	public void rez(){
+		if (masinas >= 12) {
+			izkartne.SetActive (true);
+
+		}
+	}
 
     // Update is called once per frame
     void Update () {
