@@ -17,6 +17,7 @@ public class Objekti : MonoBehaviour {
     public GameObject ugunsdzesejs;
 	public int masinas;
 	public GameObject izkartne;
+	public GameObject restart;
 
 
     [HideInInspector]
@@ -67,8 +68,9 @@ public class Objekti : MonoBehaviour {
         ugunsKoord = ugunsdzesejs.GetComponent<RectTransform>().localPosition;
     }
 	public void rez(){
-		if (masinas >= 12) {
+		if (masinas >= 2) {
 			izkartne.SetActive (true);
+			restart.SetActive (true);
 
 		}
 	}
