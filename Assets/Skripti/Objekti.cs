@@ -23,8 +23,7 @@ public class Objekti : MonoBehaviour {
     public int zvaigznesSk;
     public Sprite[] zvaigznesMasivs;
     public GameObject zvaigznes;
-    //public float laiks;
-   // public bool laiksBool;
+
 
     [HideInInspector]
     public Vector2 atkrMKoord;
@@ -64,6 +63,7 @@ public class Objekti : MonoBehaviour {
 	public int minutes;
 	public int stundas;
 	public Text text;
+	public GameObject uzvara;
 
     // Use this for initialization
     void Start() {
@@ -85,21 +85,21 @@ public class Objekti : MonoBehaviour {
 		if (masinas < 12) {
 			miliSekundes += 0.02f;
 		}
-		if (miliSekundes >= 1) {
+		if (miliSekundes >= 1) { // ja milisekundes lielākas par 1, pārvērš sekundēs
 			sekundes++;
 			miliSekundes = 0;
 		}
-		if (sekundes >= 60) {
+		if (sekundes >= 60) { //ja sekundes lielākas par 60, pārvērš minūtēs
 			minutes++;
 			sekundes=0;
 		}
-		if (minutes >= 60) {
+		if (minutes >= 60) { //ja minūtes lielākas par 60, pārvērš stundās
 			stundas++;
 			sekundes = 0;
 		}
-		text.text = $"{stundas} : {minutes} : {sekundes}";
+		text.text = $"{stundas} : {minutes} : {sekundes}"; //izvada laiku
 
-		switch (minutes)
+		switch (minutes) //atbilstoši minūšu skaitam piešķiram zvaigznes skaitu
 		{
 		case 0:
 			zvaigznesSk = 2;
@@ -114,12 +114,12 @@ public class Objekti : MonoBehaviour {
 	}
 
     public void rez() {
-        if (masinas >= 2) {
+        if (masinas >= 12) { //kad visas mašīnas ir novietotas, parādas rezultāti
 			zvaigznes.SetActive (true);
             izkartne.SetActive(true);
             restart.SetActive(true);
 			taimers.SetActive(true);
-
+			uzvara.SetActive(true);
 
 			switch (zvaigznesSk) {
 			case 0:
