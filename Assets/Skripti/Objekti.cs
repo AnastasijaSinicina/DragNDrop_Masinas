@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Objekti : MonoBehaviour {
     public GameObject atkritumuMasina;
@@ -20,7 +22,7 @@ public class Objekti : MonoBehaviour {
     public GameObject restart;
     public int zvaigznesSk;
     public Sprite[] zvaigznesMasivs;
-    public GameObject mainigasZvaigznes;
+    public GameObject zvaigznes;
     //public float laiks;
    // public bool laiksBool;
 
@@ -56,6 +58,13 @@ public class Objekti : MonoBehaviour {
     public bool vaiIstajaVieta = false;
     public GameObject pedejaisVilktais = null;
 
+	public GameObject taimers;
+	public float miliSekundes;
+	public int sekundes;
+	public int minutes;
+	public int stundas;
+	public Text text;
+
     // Use this for initialization
     void Start() {
         atkrMKoord = atkritumuMasina.GetComponent<RectTransform>().localPosition;
@@ -70,18 +79,61 @@ public class Objekti : MonoBehaviour {
         traktorKoord = traktors.GetComponent<RectTransform>().localPosition;
         traktor2Koord = traktors2.GetComponent<RectTransform>().localPosition;
         ugunsKoord = ugunsdzesejs.GetComponent<RectTransform>().localPosition;
+		zvaigznes.SetActive (false);
     }
+	public void FixedUpdate(){
+		if (masinas < 12) {
+			miliSekundes += 0.02f;
+		}
+		if (miliSekundes >= 1) {
+			sekundes++;
+			miliSekundes = 0;
+		}
+		if (sekundes >= 60) {
+			minutes++;
+			sekundes=0;
+		}
+		if (minutes >= 60) {
+			stundas++;
+			sekundes = 0;
+		}
+		text.text = $"{stundas} : {minutes} : {sekundes}";
+
+		switch (minutes)
+		{
+		case 0:
+			zvaigznesSk = 2;
+			break;
+		case 1:
+			zvaigznesSk = 1;
+			break;
+		case 2: 
+			zvaigznesSk = 0;
+			break;
+		}
+	}
+
     public void rez() {
-        if (masinas >= 12) {
+        if (masinas >= 2) {
+			zvaigznes.SetActive (true);
             izkartne.SetActive(true);
             restart.SetActive(true);
-        }
-        //switch (zvaigznesSk)
-       // {
-        //    case 0:
-         //       mainigasZvaigznes.GetComponent<Image>().sprite = zvaigznesMasivs[0];
+			taimers.SetActive(true);
 
-        //}
+
+			switch (zvaigznesSk) {
+			case 0:
+				zvaigznes.GetComponent<Image> ().sprite = zvaigznesMasivs [0];
+				break;
+			case 1:
+				zvaigznes.GetComponent<Image> ().sprite = zvaigznesMasivs [1];
+				break;
+			case 2:
+				zvaigznes.GetComponent<Image> ().sprite = zvaigznesMasivs [2];
+				break;
+			}
+        }
+      
     }
 
     
