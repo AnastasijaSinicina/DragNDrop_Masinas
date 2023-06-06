@@ -3,27 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Objekti : MonoBehaviour {
-	public GameObject atkritumuMasina;
-	public GameObject atraPalidziba;
-	public GameObject autobuss;
+    public GameObject atkritumuMasina;
+    public GameObject atraPalidziba;
+    public GameObject autobuss;
     public GameObject cementaMasina;
     public GameObject e46;
     public GameObject b2;
     public GameObject e61;
     public GameObject eskavators;
-	public GameObject policija;
+    public GameObject policija;
     public GameObject traktors;
     public GameObject traktors2;
     public GameObject ugunsdzesejs;
-	public int masinas;
-	public GameObject izkartne;
-	public GameObject restart;
-
+    public int masinas;
+    public GameObject izkartne;
+    public GameObject restart;
+    public int zvaigznesSk;
+    public Sprite[] zvaigznesMasivs;
+    public GameObject mainigasZvaigznes;
+    //public float laiks;
+   // public bool laiksBool;
 
     [HideInInspector]
-	public Vector2 atkrMKoord;
-	[HideInInspector]
-	public Vector2 atrPalKoord;
+    public Vector2 atkrMKoord;
+    [HideInInspector]
+    public Vector2 atrPalKoord;
     [HideInInspector]
     public Vector2 bussKoord;
     [HideInInspector]
@@ -36,25 +40,25 @@ public class Objekti : MonoBehaviour {
     public Vector2 b2Koord;
     [HideInInspector]
     public Vector2 eskKord;
-     [HideInInspector]
-     public Vector2 policijaKoord;
-     [HideInInspector]
+    [HideInInspector]
+    public Vector2 policijaKoord;
+    [HideInInspector]
     public Vector2 traktorKoord;
-     [HideInInspector]
+    [HideInInspector]
     public Vector2 traktor2Koord;
-     [HideInInspector]
+    [HideInInspector]
     public Vector2 ugunsKoord;
 
     public Canvas kanva;
-	public AudioSource audioAvots;
-	public AudioClip[] skanasKoAtskanot;
+    public AudioSource audioAvots;
+    public AudioClip[] skanasKoAtskanot;
 
-	public bool vaiIstajaVieta = false;
-	public GameObject pedejaisVilktais = null;
+    public bool vaiIstajaVieta = false;
+    public GameObject pedejaisVilktais = null;
 
     // Use this for initialization
-    void Start () {
-		atkrMKoord = atkritumuMasina.GetComponent<RectTransform>().localPosition;
+    void Start() {
+        atkrMKoord = atkritumuMasina.GetComponent<RectTransform>().localPosition;
         atrPalKoord = atraPalidziba.GetComponent<RectTransform>().localPosition;
         bussKoord = autobuss.GetComponent<RectTransform>().localPosition;
         cementaKoord = cementaMasina.GetComponent<RectTransform>().localPosition;
@@ -67,13 +71,20 @@ public class Objekti : MonoBehaviour {
         traktor2Koord = traktors2.GetComponent<RectTransform>().localPosition;
         ugunsKoord = ugunsdzesejs.GetComponent<RectTransform>().localPosition;
     }
-	public void rez(){
-		if (masinas >= 2) {
-			izkartne.SetActive (true);
-			restart.SetActive (true);
+    public void rez() {
+        if (masinas >= 12) {
+            izkartne.SetActive(true);
+            restart.SetActive(true);
+        }
+        //switch (zvaigznesSk)
+       // {
+        //    case 0:
+         //       mainigasZvaigznes.GetComponent<Image>().sprite = zvaigznesMasivs[0];
 
-		}
-	}
+        //}
+    }
+
+    
 
     // Update is called once per frame
     void Update () {
